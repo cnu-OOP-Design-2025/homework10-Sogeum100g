@@ -3,7 +3,6 @@
 #include <initializer_list>
 #include <cstddef>
 
-
 template<typename T>
 class MyVector {
     T* data;            // 동적 배열을 가리키는 포인터
@@ -50,15 +49,15 @@ public:
 
         T& operator*(); // 역참조 연산자 구현 
 
-        Iterator& operator++();   //전위 증가 연산자 구현
-        Iterator& operator--();   //전위 감소 연산자 구현
-        Iterator operator+(int n) const ;   // 산술 연산자 구현
-        Iterator operator-(int n) const ;   // 산술 연산자 구현
+        Iterator& operator++();   //전위 증가 연산자 구현, 1만큼 떨어진 이터레이터 반환
+        Iterator& operator--();   //전위 감소 연산자 구현, 1만큼 떨어진 이터레이터 반환
+        Iterator operator+(int n) const ;   // 산술 연산자 구현, n만큼 떨어진 이터레이터 반환
+        Iterator operator-(int n) const ;   // 산술 연산자 구현, n만큼 떨어진 이터레이터 반환
 
         bool operator==(const Iterator& other) const ;
         bool operator!=(const Iterator& other) const ;
 
-        int operator-(const Iterator& other) const ;
+        int operator-(const Iterator& other) const ; // 이터레이터 간 거리 반환
     };
 
     // 첫번째 항목에 대한 iterator 리턴 함수 구현

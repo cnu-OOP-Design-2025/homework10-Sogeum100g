@@ -1,5 +1,5 @@
 #include <iostream>
-#include "MyVector.h"
+#include "MyVector.cpp"
 
 
 void test1() {
@@ -39,7 +39,7 @@ void test2() {
     std::cout << "c >= a: " << (c >= a) << "\n";   // 1
 
     MyVector<int> d;
-    d.push_back(1); d.push_back(2);
+    d.push_back(1); d.push_back(2); // d = {1, 2}
     std::cout << "d < a: " << (d < a) << "\n";     // 1
     std::cout << "a > d: " << (a > d) << "\n";     // 1
 
